@@ -1,3 +1,126 @@
-header {
+.header {
   display: block;
+}
+
+.header__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @media (min-width: @min-xl) {
+    padding-top: 15px;
+  }
+}
+
+.header__logo {
+  width: 70px;
+
+  @media (min-width: @min-xl) {
+    width: 110px;
+  }
+}
+
+.header__button {
+  width: 48px;
+  height: 48px;
+  appearance: none;
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  margin: 0;
+  box-shadow: none;
+  background-position: center;
+  background-size: 20px auto;
+  background-repeat: no-repeat;
+  position: relative;
+
+  &--cart {
+    background-image: url(../img/cart.svg);
+  }
+
+  &--user {
+    background-image: url(../img/user.svg);
+  }
+
+  &--burder {
+
+    &::before,
+    &::after {
+      content: '';
+      display: block;
+      width: 20px;
+      height: 3px;
+      background-color: #272626;
+      position: absolute;
+      left: 14px;
+    }
+
+    &::before {
+      top: 16px;
+      box-shadow: 0px 6.5px 0 #272626;
+    }
+
+    &::after {
+      bottom: 16px;
+    }
+  }
+
+  @media (min-width: @min-xl) {
+    background-size: 35px;
+    margin-right: 35px;
+
+
+    &:nth-last-child(2) {
+      margin-right: 0;
+    }
+  }
+}
+
+.header__nav {
+  display: flex;
+
+  @media (min-width: @min-xl) {
+    width: 100%;
+
+    & nav {
+      display: flex;
+      align-items: center;
+      width: 100%;
+    }
+  }
+}
+
+@media (min-width: @min-xl) {
+  .header__nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-left: 200px;
+    margin-right: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .header__nav-link {
+    font-family: Roboto, sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 1;
+    letter-spacing: 0.06em;
+    color: #272626;
+    text-decoration: none;
+  }
+
+  .header__nav-phone {
+    font-family: Roboto, sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 1;
+    letter-spacing: 0.06em;
+    color: #FFFFFF;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.48);
+    text-decoration: none;
+  }
 }

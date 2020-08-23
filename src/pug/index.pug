@@ -1,33 +1,36 @@
-extends templates/template.pug
+<!DOCTYPE html>
+html(lang="ru")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    title ZOOM - фотостудия
+    link(rel="stylesheet", href="css/style.css")
 
-block variables
-  //- переменная для template.pug
-  - var pageTitle = "first page"
+  body
+
+    header.header
+      .container.header__container
+        a(href="#", aria-label="главная")
+          img(src="./img/logo.png" alt="логотип").header__logo
+
+        .header__nav
+          nav.hidden-min-xl
+            ul.header__nav-list
+              li.header__nav-item 
+                a.header__nav-link(href="#") Наши услуги
+              li.header__nav-item 
+                a.header__nav-link(href="#") Контакты
+              li.header__nav-item 
+                a.header__nav-link(href="#") Оплата
+              li.header__nav-item
+                a.header__nav-phone(href="tel:+79020959759")  +7(902) 095-97-59
+
+          button.header__button.header__button--cart(aria-label="корзина")
+          button.header__button.header__button--user(aria-label="юзер")
+          button.header__button.header__button--burder.hidden-max-xl(aria-label="открыть меню")
+
+    main
 
 
-block main
-
-  h2 index.html
-
-  include templates/header.pug
-  
-  main
-    h2 hello
-
-    img(width="300" src="img/img.jpg" alt="#")
-
-    //- массив для текущей страницы
-    - var svgImages = ["#ava-default", "#cat-logo"]
-
-    //- цикл
-    each svgImage in svgImages
-      br
-      svg(width="300" role="img")
-        use(xlink:href=svgImage)
-
-    //- mixin   
-    +my_card("Заголокок", "Купить")
-    +my_card("еще заголовок", "Продать")
-
-  include templates/footer.pug
-  
+    script(src="js/main.js")
