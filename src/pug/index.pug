@@ -26,8 +26,10 @@ html(lang="ru")
               li.header__nav-item
                 a.header__nav-phone(href="tel:+79020959759")  +7(902) 095-97-59
 
-          a.header__button.header__button--cart(aria-label="Корзина", href="#")
-          a.header__button.header__button--user(aria-label="Личный кабинет", href="#")
+          a.header__button(aria-label="Корзина", href="#")
+            include ../img/cart.svg
+          a.header__button(aria-label="Личный кабинет", href="#")
+            include ../img/user.svg
           button.header__button.header__button--burder.hidden-max-xl(aria-label="открыть меню")
 
     main
