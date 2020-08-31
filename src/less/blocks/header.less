@@ -27,6 +27,8 @@
 .header__button {
   width: 48px;
   height: 48px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
   appearance: none;
   border: none;
   background-color: transparent;
@@ -46,6 +48,7 @@
       background-color: var(--text-color);
       position: absolute;
       left: 14px;
+      transition: transform 200ms, box-shadow 200ms;
     }
 
     &::before {
@@ -56,6 +59,27 @@
     &::after {
       bottom: 16px;
     }
+
+    &.open {
+      z-index: 2;
+
+      &.open::before,
+      &.open::after {
+        background-color: var(--interactive-color);
+        top: 50%;
+        left: 50%;
+      }
+      
+      &.open::before {
+        box-shadow: 0px 6.5px 0 transparent;
+        transform: translate(-50%, -50%) rotate(45deg);
+      }
+
+      &.open::after {
+        transform: translate(-50%, -50%) rotate(-45deg);
+      }
+    }
+
   }
 
   & svg {
@@ -65,14 +89,14 @@
     transform: translate(-50%, -50%);
     width: 20px;
     fill: var(--text-color);
-    
-      @media (min-width: @min-md) {
-        width: 25px;
-      }
 
-      @media (min-width: @min-xl) {
-        width: 35px;
-      }
+    @media (min-width: @min-md) {
+      width: 25px;
+    }
+
+    @media (min-width: @min-xl) {
+      width: 35px;
+    }
   }
 
   @media (min-width: @min-xl) {
@@ -99,11 +123,14 @@
   }
 }
 
+.header__nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
 @media (min-width: @min-xl) {
   .header__nav-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
     margin-left: 200px;
     margin-right: 60px;
     display: flex;
@@ -113,7 +140,6 @@
   }
 
   .header__nav-link {
-    font-family: Roboto, sans-serif;
     font-weight: 300;
     font-size: 14px;
     line-height: 1;
@@ -123,7 +149,6 @@
   }
 
   .header__nav-phone {
-    font-family: Roboto, sans-serif;
     font-weight: bold;
     font-size: 20px;
     line-height: 1;
@@ -131,5 +156,43 @@
     color: #FFFFFF;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.48);
     text-decoration: none;
+  }
+}
+
+@media (max-width: @max-xl) {
+  .nav-visible {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border-radius: 9px;
+    background-color: var(--text-color);
+    padding-top: 70px;
+    padding-bottom: 70px;
+    z-index: 1;
+
+    .header__nav-list {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    & .header__nav-item {
+      border-bottom: 1px solid rgba(255, 252, 252, 0.62);
+    }
+
+    & .header__nav-link {
+      display: block;
+      width: 160px;
+      height: 50px;
+      text-align: center;
+      font-size: 16px;
+      line-height: 50px;
+      color: #FDFAFA;
+      text-decoration: none;
+      padding-left: 16px;
+      padding-right: 16px;
+    }
   }
 }
