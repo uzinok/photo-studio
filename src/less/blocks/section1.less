@@ -17,6 +17,29 @@
         background-image: url(../img/bg-section1-girl.png);
         background-repeat: no-repeat;
         background-position: center top;
+
+        @media (min-width: @min-md) {
+            background-image: url(../img/bg-section1-girl@768.png);
+        }
+
+        @media (min-width: @min-xl) {
+            background-image: url(../img/bg-section1-girl@1024.png);
+        }
+
+        @media (min-width: @min-xxl) {
+            width: 1004px;
+            height: 614px;
+            left: 67%;
+            transform: translateX(-50%);
+        }
+    }
+
+    @media (min-width: @min-md) {
+        position: static;
+    }
+
+    @media (min-width: @min-xxl) {
+        text-align: left;
     }
 }
 
@@ -34,6 +57,23 @@
     line-height: 1;
     letter-spacing: -0.04em;
     text-transform: uppercase;
-
     color: var(--text-color);
+
+    @media (min-width: @min-md) {
+        font-size: 17px;
+        padding: 22px 12px;
+        margin-top: 26px;
+    }
+
+    @media (min-width: @min-xl) {
+        margin-top: 45px;
+        padding: 28px 30px;
+        font-size: 16px;
+    }
+
+    @media (min-width: @min-xxl) {
+        margin-top: 55px;
+        padding: 28px 30px;
+        font-size: 16px;
+    }
 }

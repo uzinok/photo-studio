@@ -50,4 +50,38 @@ img {
     letter-spacing: 0;
     text-shadow: 1px 0px 1px rgba(0, 0, 0, 0.63);
   }
+
+  @media (min-width: @min-md) {
+    font-size: 200px;
+    line-height: 120px;
+    text-shadow: 0 4.5px 4.5px #000;
+
+    & span {
+      margin-top: 40px;
+      font-size: 34px;
+      line-height: 116%;
+    }
+  }
+
+  @media (min-width: @min-xl) {
+    font-size: 230px;
+    line-height: 200px;
+    color: #FFFDFD;
+    text-shadow: -3px 2px 8px rgba(0, 0, 0, 0.87);
+
+    & span {
+      font-size: 34px;
+    }
+  }
+
+  @media (min-width: @min-xxl) {
+    line-height: 200px;
+    text-shadow: -3px 2px 8px rgba(0, 0, 0, 0.87);
+
+    & span {
+      margin-top: 20px;
+      color: var(--text-color);
+      text-shadow: none;
+    }
+  }
 }
