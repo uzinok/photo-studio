@@ -5,6 +5,25 @@
     text-align: center;
     padding-bottom: 30px;
 
+    &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        height: 100%;
+        clip-path: url(#svgPath);
+        background-color: var(--interactive-color);
+        opacity: 59%;
+        z-index: -1;
+
+        @media (min-width: @min-md) {
+            position: static;
+        }
+    }
+
     &::before {
         content: '';
         display: block;
