@@ -64,8 +64,20 @@ html(lang="ru")
           .slider__list-wrap
             ul.slider__list
               +my_slide-1("./img/1.jpg", "Фото на документы")
-              +my_slide-1("./img/2.jpg", "Печать Фотографий")
-              +my_slide-1("./img/3.jpg", "Распечатка, ксерокопия сканирование")
+              +my_slide-1("./img/2.jpg", "Ксерокопия, сканирование, распечатка")
+              +my_slide-1("./img/3.jpg", "Распечатка фотографий")
+              +my_slide-1("./img/4.jpg", "Ретушь и коррекция")
+              +my_slide-1("./img/5.jpg", "Брелоки и магниты")
+              +my_slide-1("./img/6.jpg", "Раскраска фотографий")
+              +my_slide-1("./img/7.jpg", "Монтаж, замена фона")
+              +my_slide-1("./img/8.jpg", "Реставрация фотографий")
+              +my_slide-1("./img/9.jpg", "Коррекция фигуры и лица")
 
+          .slider__nav
+            button.slider__prev(aria-label="Предыдущий слайд")
+            button.slider__next(aria-label="Следующий слайд")
+
+            each slide in [{text: 'первый'}, {text: 'второй'},{text: 'третий'},{text: 'четвертый'},{text: 'пятый'},{text: 'шестой'},{text: 'седьмой'},{text: 'восьмой'},{text: 'девятый'}]
+              button.slider__pager-button(aria-label='показать ' + slide.text + ' слайд')
 
     script(src="js/main-debug.js")
