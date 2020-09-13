@@ -1,3 +1,9 @@
+mixin my_slide-1(url_img, text)
+  li.slider__item
+    img(src='/' + url_img)
+    a(href="#")
+      | #{text}
+
 <!DOCTYPE html>
 html(lang="ru")
   head
@@ -49,6 +55,17 @@ html(lang="ru")
             span в Волгограде
 
           a.button.section1__button(href="#")  Заказать услугу онлайн
+      
+      section.section2
+
+        h2.heading-2 Наши услуги
+
+        .slider.no-JS
+          .slider__list-wrap
+            ul.slider__list
+              +my_slide-1("./img/1.jpg", "Фото на документы")
+              +my_slide-1("./img/2.jpg", "Печать Фотографий")
+              +my_slide-1("./img/3.jpg", "Распечатка, ксерокопия сканирование")
 
 
     script(src="js/main-debug.js")
