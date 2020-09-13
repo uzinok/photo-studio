@@ -13,14 +13,29 @@
         left: 50%;
         transform: translateX(-50%);
         width: 100%;
+        max-width: 2000px;
         height: 100%;
-        clip-path: url(#svgPath);
+        clip-path: url(#svgPath-bg-section);
         background-color: var(--interactive-color);
         opacity: 59%;
         z-index: -1;
 
         @media (min-width: @min-md) {
-            position: static;
+            clip-path: url(#svgPath-bg-section@768);
+            top: 70px;
+            height: 380px;
+        }
+
+        @media (min-width: @min-xl) {
+            clip-path: url(#svgPath-bg-section@1024);
+            top: 80px;
+            height: 575px;
+        }
+
+        @media (min-width: @min-xxl) {
+            clip-path: url(#svgPath-bg-section@1450);
+            top: 65px;
+            height: 575px;
         }
     }
 
@@ -32,23 +47,25 @@
         left: 50%;
         transform: translateX(-50%);
         width: 100%;
-        height: 100%;
+        height: 182px;
         background-image: url(../img/bg-section1-girl.png);
         background-repeat: no-repeat;
         background-position: center top;
 
         @media (min-width: @min-md) {
             background-image: url(../img/bg-section1-girl@768.png);
+            height: 436px;
         }
 
         @media (min-width: @min-xl) {
             background-image: url(../img/bg-section1-girl@1024.png);
+            height: 614px;
         }
 
         @media (min-width: @min-xxl) {
             width: 1004px;
             height: 614px;
-            left: 67%;
+            left: 66%;
             transform: translateX(-50%);
         }
     }
