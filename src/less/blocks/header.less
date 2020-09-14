@@ -1,5 +1,6 @@
 .header {
   display: block;
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 1), transparent);
 
   @media (min-width: @min-md) {
     position: relative;
@@ -14,6 +15,7 @@
 
   @media (min-width: @min-xl) {
     padding-top: 15px;
+    padding-bottom: 15px;
   }
 }
 
@@ -145,11 +147,11 @@
 
 @media (min-width: @min-xl) {
   .header__nav-list {
-    margin-left: 200px;
-    margin-right: 60px;
+    margin-left: auto;
+    margin-right: auto;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     width: 100%;
   }
 
@@ -163,18 +165,15 @@
   }
 
   .header__nav-phone {
-    font-weight: bold;
     font-size: 20px;
     line-height: 1;
     letter-spacing: 0.06em;
-    color: #FFFFFF;
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.48);
+    color: var(--text-color);
     text-decoration: none;
     transition: color var(--transition-delay), text-shadow var(--transition-delay);
 
     &:hover {
       color: var(--interactive-color);
-      text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.48);
     }
   }
 }
