@@ -17,5 +17,5 @@ gulp.task("server", function () {
   gulp.watch("src/img/*.+(svg|png|jpg|webp)", gulp.series("copy")).on("change", server.reload);
 });
 
-gulp.task("build", gulp.series("clean", "copy", "copy_script", "less", "js", "html",));
+gulp.task("build", gulp.series("clean", "copy", "copy_script", "less", "js", "html"));
 gulp.task("default", gulp.series("build", "server"));
