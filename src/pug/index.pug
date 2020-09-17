@@ -1,7 +1,7 @@
-mixin my_slide-1(url_img, text)
-  li.slider__item
+mixin my_slide-1(url_img, text, count)
+  li.slider__item(data-count=count)
     img(src='/' + url_img)
-    a(href="#")
+    a(href="#" tabindex="-1")
       | #{text}
 
 <!DOCTYPE html>
@@ -63,21 +63,22 @@ html(lang="ru")
         .slider.no-JS
           .slider__list-wrap
             ul.slider__list
-              +my_slide-1("./img/1.jpg", "Фото на документы")
-              +my_slide-1("./img/2.jpg", "Ксерокопия, сканирование, распечатка")
-              +my_slide-1("./img/3.jpg", "Распечатка фотографий")
-              +my_slide-1("./img/4.jpg", "Ретушь и коррекция")
-              +my_slide-1("./img/5.jpg", "Брелоки и магниты")
-              +my_slide-1("./img/6.jpg", "Раскраска фотографий")
-              +my_slide-1("./img/7.jpg", "Монтаж, замена фона")
-              +my_slide-1("./img/8.jpg", "Реставрация фотографий")
-              +my_slide-1("./img/9.jpg", "Коррекция фигуры и лица")
+              +my_slide-1("./img/1.jpg", "Фото на документы", 1)
+              +my_slide-1("./img/2.jpg", "Ксерокопия, сканирование, распечатка", 2)
+              +my_slide-1("./img/3.jpg", "Распечатка фотографий", 3)
+              +my_slide-1("./img/4.jpg", "Ретушь и коррекция", 4)
+              +my_slide-1("./img/5.jpg", "Брелоки и магниты", 5)
+              +my_slide-1("./img/6.jpg", "Раскраска фотографий", 6)
+              +my_slide-1("./img/7.jpg", "Монтаж, замена фона", 7)
+              +my_slide-1("./img/8.jpg", "Реставрация фотографий", 8)
+              +my_slide-1("./img/9.jpg", "Коррекция фигуры и лица", 9)
 
           .slider__nav
             button.slider__prev(aria-label="Предыдущий слайд")
+            
+            each slide in [{text: 'первый', count: 1}, {text: 'второй', count: 2},{text: 'третий', count: 3},{text: 'четвертый', count: 4},{text: 'пятый', count: 5},{text: 'шестой', count: 6},  {text: 'седьмой', count: 7},{text: 'восьмой', count: 8},{text: 'девятый', count: 9}]
+              button.slider__pager-button(aria-label='показать ' + slide.text + ' слайд', data-count=slide.count)
+            
             button.slider__next(aria-label="Следующий слайд")
-
-            each slide in [{text: 'первый'}, {text: 'второй'},{text: 'третий'},{text: 'четвертый'},{text: 'пятый'},{text: 'шестой'},{text: 'седьмой'},{text: 'восьмой'},{text: 'девятый'}]
-              button.slider__pager-button(aria-label='показать ' + slide.text + ' слайд')
 
     script(src="js/main-debug.js")
