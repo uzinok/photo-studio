@@ -1,3 +1,4 @@
+@transitionDelay: 300ms;
 .slider {
     position: relative;
     margin-bottom: 50px;
@@ -42,49 +43,52 @@
     display: flex;
     flex-direction: column;
     width: 268px;
-    padding-top: 25px;
     box-sizing: border-box;
     background-color: #fff;
     align-items: center;
     transform: translate(0, 0);
     opacity: 0.5;
-    transition: opacity calc(var(--transition-delay) + var(--transition-delay)/2), transform calc(var(--transition-delay) + var(--transition-delay)/2);
-
-    & img {
-        width: 214px;
-
-        @media (min-width: @min-md) {
-            width: 370px;
-        }
-
-        @media (min-width: @min-xl) {
-            width: 480px;
-        }
-
-        @media (min-width: @min-xxl) {
-            width: 514px;
-        }
-    }
+    transition: opacity @transitionDelay, transform @transitionDelay;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
 
     & a {
-        display: inline-block;
-        padding: 10px 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        box-sizing: border-box;
+        height: 50px;
         text-align: center;
         font-weight: 300;
-        font-size: 18px;
-        line-height: 21px;
+        font-size: 16px;
+        line-height: 1.1;
         text-decoration: none;
         color: var(--text-color);
 
-        @media (min-width: @min-xl) {
-            font-size: 24px;
-            line-height: 28px;
-            padding: 20px 0;
+        @media (min-width: @min-md) {
+            height: 85px;
+            font-size: 25px;
         }
+
+        @media (min-width: @min-xl) {
+            height: 108px;
+            font-size: 30px;
+            padding: 0 30px;
+        }
+
+        @media (min-width: @min-xxl) {
+            height: 116px;
+            padding: 0 60px;
+            line-height: 1.2;
+        }
+
     }
 
     @media (min-width: @min-md) {
-        padding-top: 40px;
         width: 450px;
     }
 
@@ -246,7 +250,7 @@
             left: 50%;
             transform: translate(-50%, -50%);
             background-color: #C4C4C4;
-            transition: background var(--transition-delay), width calc(var(--transition-delay) / 0.5), height calc(var(--transition-delay) / 2);
+            transition: background @transitionDelay, width calc(@transitionDelay / 0.5), height calc(@transitionDelay / 2);
         }
 
         &:hover,
@@ -256,7 +260,7 @@
                 background-color: var(--interactive-color);
                 width: 28px;
                 height: 28px;
-                transition: background var(--transition-delay), width calc(var(--transition-delay) / 2), height calc(var(--transition-delay) / 0.5);
+                transition: background @transitionDelay, width calc(@transitionDelay / 2), height calc(@transitionDelay / 0.5);
             }
         }
     }
