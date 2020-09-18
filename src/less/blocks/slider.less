@@ -1,6 +1,8 @@
 .slider {
     position: relative;
     margin-bottom: 50px;
+    max-width: 1450px;
+    margin: 0 auto;
 }
 
 .slider__list {
@@ -22,7 +24,7 @@
     align-items: center;
     transform: translate(0, 0);
     opacity: 0.5;
-    transition: opacity var(--transition-delay), transform var(--transition-delay);
+    transition: opacity calc(var(--transition-delay) + var(--transition-delay)/2), transform calc(var(--transition-delay) + var(--transition-delay)/2);
 
     & img {
         width: 214px;
