@@ -3,6 +3,30 @@
     margin-bottom: 50px;
     max-width: 1450px;
     margin: 0 auto;
+
+    @media (min-width: @min-xxl) {
+
+        &::before,
+        &::after {
+            content: '';
+            display: block;
+            width: 200px;
+            height: 100%;
+            position: absolute;
+            top: 0;
+        }
+
+        &::before {
+            left: 0;
+            background-image: linear-gradient(to right, #f9f9f9, transparent);
+            z-index: 2;
+        }
+        
+        &::after {
+            background-image: linear-gradient(to left, #f9f9f9, transparent);
+            right: 0;
+        }
+    }
 }
 
 .slider__list {
