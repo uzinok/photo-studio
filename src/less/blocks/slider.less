@@ -40,16 +40,15 @@
 }
 
 .slider__item {
-    display: flex;
-    flex-direction: column;
     width: 268px;
-    box-sizing: border-box;
-    background-color: #fff;
-    align-items: center;
     transform: translate(0, 0);
     opacity: 0.5;
     transition: opacity @transitionDelay, transform @transitionDelay;
     box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
+
+    & img {
+        display: block;
+    }
 
     & a {
         display: flex;
@@ -97,7 +96,6 @@
     }
 
     @media (min-width: @min-xxl) {
-        padding-top: 45px;
         width: 624px;
     }
 
