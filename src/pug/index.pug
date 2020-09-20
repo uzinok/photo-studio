@@ -39,7 +39,7 @@ html(lang="ru")
             img(src="./img/logo.png" alt="логотип").header__logo
 
         .header__nav
-          nav.hidden-max-xl
+          nav.hidden-max-lg
             ul.header__nav-list
               li.header__nav-item 
                 a.header__nav-link(href="#") Наши услуги
@@ -47,7 +47,7 @@ html(lang="ru")
                 a.header__nav-link(href="#") Контакты
               li.header__nav-item 
                 a.header__nav-link(href="#") Оплата
-              li.header__nav-item.hidden-max-xl
+              li.header__nav-item.hidden-max-lg
                 a.header__nav-phone(href="tel:+79020959759")  +7(902) 095-97-59
               li.header__nav-item.hidden-min-xl
                 a.header__nav-link(href="#")  Заказать онлайн
@@ -93,5 +93,26 @@ html(lang="ru")
               button.slider__pager-button(aria-label='показать ' + slide.text + ' слайд', data-count=slide.count)
             
             button.slider__next(aria-label="Следующий слайд")
+
+      section.section2
+        .container
+
+          h2.heading-2  Фотография на любой вид документов
+          
+          p  Почему выбирают нас?
+
+          ul.interactive-color-list
+            li  Возможность сделать множество кадров
+            li  Наблюдать за процессом обработки
+            li  Ретушь фотографии бесплатна!
+              br  
+              | (выровним тон лица, поправим прическу, макияж и др)
+            li  Мы знаем все требования к различным документам
+              br  
+              | исключены тени!  
+            li  У нас профессиональное оборудование, освещение
+            li  Пиджаки  и  форма для монтажа
+
+          p.title Если по какой-то причине вам не понравится фото,   мы не возьмем с вас оплату и будем ждать вас снова!
 
     script(src="js/main-debug.js")

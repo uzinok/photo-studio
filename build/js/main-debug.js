@@ -14,11 +14,11 @@ window.onload = function () {
         if (nav.classList.contains('nav-visible')) {
             nav.classList.remove('nav-visible');
             setTimeout(function () {
-                nav.classList.add('hidden-max-xl');
+                nav.classList.add('hidden-max-lg');
                 headerButtonJs.classList.remove('open');
             }, 500);
         } else {
-            nav.classList.remove('hidden-max-xl');
+            nav.classList.remove('hidden-max-lg');
 
             setTimeout(function () {
                 nav.classList.add('nav-visible');

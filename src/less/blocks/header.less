@@ -13,7 +13,7 @@
   justify-content: space-between;
   align-items: center;
 
-  @media (min-width: @min-xl) {
+  @media (min-width: @min-lg) {
     padding-top: 15px;
     padding-bottom: 15px;
   }
@@ -26,7 +26,7 @@
     width: 100px;
   }
 
-  @media (min-width: @min-xl) {
+  @media (min-width: @min-lg) {
     width: 110px;
   }
 }
@@ -102,12 +102,12 @@
       width: 25px;
     }
 
-    @media (min-width: @min-xl) {
+    @media (min-width: @min-lg) {
       width: 35px;
     }
   }
 
-  @media (min-width: @min-xl) {
+  @media (min-width: @min-lg) {
     margin-right: 35px;
 
 
@@ -120,7 +120,7 @@
 .header__nav {
   display: flex;
 
-  @media (min-width: @min-xl) {
+  @media (min-width: @min-lg) {
     width: 100%;
 
     & nav {
@@ -145,7 +145,7 @@
   }
 }
 
-@media (min-width: @min-xl) {
+@media (min-width: @min-lg) {
   .header__nav-list {
     margin-left: auto;
     margin-right: auto;
@@ -168,8 +168,9 @@
     font-size: 20px;
     line-height: 1;
     letter-spacing: 0.06em;
-    color: var(--text-color);
+    color: #fff;
     text-decoration: none;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.48);
     transition: color var(--transition-delay), text-shadow var(--transition-delay);
 
     &:hover {
@@ -178,7 +179,7 @@
   }
 }
 
-@media (max-width: @max-xl) {
+@media (max-width: @max-lg) {
   .header__nav nav {
     transition: opacity 500ms;
     position: absolute;
