@@ -1,6 +1,16 @@
 mixin my_slide-1(url_img, text, count)
   li.slider__item(data-count=count)
-    img(src='./img/slider1-624/' + url_img + '-624.jpg')
+    picture
+      source(type="image/webp", media='(min-width: 1045px)', srcset='./img/slider1-624/' + url_img + '-624.webp 1x, ./img/slider1-624/' + url_img + '-624@2x.webp 2x')
+      source(type="image/webp", media='(min-width: 1024px)', srcset='./img/slider1-585/' + url_img + '-585.webp 1x, ./img/slider1-585/' + url_img + '-585@2x.webp 2x')
+      source(type="image/webp", media='(min-width: 768px)', srcset='./img/slider1-450/' + url_img + '-450.webp 1x, ./img/slider1-450/' + url_img + '-450@2x.webp 2x')
+      source(type="image/webp", srcset='./img/slider1-268/' + url_img + '-268.webp 1x, ./img/slider1-268/' + url_img + '-268@2x.webp 2x')
+
+      source(media='(min-width: 1450px)' srcset='./img/slider1-624/' + url_img + '-624.jpg 1x, ./img/slider1-624/' + url_img + '-624@2x.jpg 2x')
+      source(media='(min-width: 1024px)' srcset='./img/slider1-585/' + url_img + '-585.jpg 1x, ./img/slider1-585/' + url_img + '-585@2x.jpg 2x')
+      source(media='(min-width: 768px)' srcset='./img/slider1-450/' + url_img + '-450.jpg 1x, ./img/slider1-450/' + url_img + '-450@2x.jpg 2x')
+      img(src='./img/slider1-268/' + url_img + '-268.jpg' srcset='./img/slider1-268/' + url_img + '-268.jpg 1x, ./img/slider1-268/' + url_img + '-268@2x.jpg 2x')
+
     a(href="#" tabindex="-1")
       | #{text}
 
