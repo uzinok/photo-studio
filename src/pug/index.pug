@@ -1,6 +1,6 @@
 mixin my_slide-1(url_img, text, count)
   li.slider__item(data-count=count)
-    img(src='/' + url_img)
+    img(src='./img/slider1-624/' + url_img + '-624.jpg')
     a(href="#" tabindex="-1")
       | #{text}
 
@@ -10,6 +10,7 @@ html(lang="ru")
     meta(charset="UTF-8")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    link(rel="shortcut icon", href="img/icon.png", type="image/x-icon")
     title ZOOM - фотостудия
     link(rel="stylesheet", href="css/style.css")
 
@@ -23,7 +24,9 @@ html(lang="ru")
     header.header
       .container.header__container
         a(href="#", aria-label="главная")
-          img(src="./img/logo.png" alt="логотип").header__logo
+          picture
+            source(type="image/webp" srcset="img/logo.webp")
+            img(src="./img/logo.png" alt="логотип").header__logo
 
         .header__nav
           nav.hidden-max-xl
@@ -63,15 +66,15 @@ html(lang="ru")
         .slider.no-JS
           .slider__list-wrap
             ul.slider__list
-              +my_slide-1("./img/1.jpg", "Фото на документы", 1)
-              +my_slide-1("./img/2.jpg", "Ксерокопия, сканирование, распечатка", 2)
-              +my_slide-1("./img/3.jpg", "Распечатка фотографий", 3)
-              +my_slide-1("./img/4.jpg", "Ретушь и коррекция", 4)
-              +my_slide-1("./img/5.jpg", "Брелоки и магниты", 5)
-              +my_slide-1("./img/6.jpg", "Раскраска фотографий", 6)
-              +my_slide-1("./img/7.jpg", "Монтаж, замена фона", 7)
-              +my_slide-1("./img/8.jpg", "Реставрация фотографий", 8)
-              +my_slide-1("./img/9.jpg", "Коррекция фигуры и лица", 9)
+              +my_slide-1("slider1", "Фото на документы", 1)
+              +my_slide-1("slider2", "Ксерокопия, сканирование, распечатка", 2)
+              +my_slide-1("slider3", "Распечатка фотографий", 3)
+              +my_slide-1("slider4", "Ретушь и коррекция", 4)
+              +my_slide-1("slider5", "Брелоки и магниты", 5)
+              +my_slide-1("slider6", "Раскраска фотографий", 6)
+              +my_slide-1("slider7", "Монтаж, замена фона", 7)
+              +my_slide-1("slider8", "Реставрация фотографий", 8)
+              +my_slide-1("slider9", "Коррекция фигуры и лица", 9)
 
           .slider__nav
             button.slider__prev(aria-label="Предыдущий слайд")
