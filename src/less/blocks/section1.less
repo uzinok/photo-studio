@@ -52,14 +52,24 @@
         background-repeat: no-repeat;
         background-position: center top;
 
+        @media (min-resolution: @retina-dpi), (min-resolution: @retina-dppx) {
+            background-image: url(../img/bg-section1-girl.png?1);
+        }
+
         @media (min-width: @min-md) {
             background-image: url(../img/bg-section1-girl@768.png);
             height: 436px;
+            @media (min-resolution: @retina-dpi), (min-resolution: @retina-dppx) {
+                background-image: url(../img/bg-section1-girl@768.png?2);
+            }
         }
 
         @media (min-width: @min-xl) {
             background-image: url(../img/bg-section1-girl@1024.png);
             height: 614px;
+            @media (min-resolution: @retina-dpi), (min-resolution: @retina-dppx) {
+                background-image: url(../img/bg-section1-girl@1024.png?3);
+            }
         }
 
         @media (min-width: @min-xxl) {
