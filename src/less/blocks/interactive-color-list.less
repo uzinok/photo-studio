@@ -1,0 +1,41 @@
+.interactive-color-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    & li {
+        position: relative;
+        padding-left: 40px;
+        padding-bottom: 1em;
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 1.1;
+
+        &::before {
+            content: '';
+            display: block;
+            width: 14px;
+            height: 12px;
+            border: 2px solid transparent;
+            position: absolute;
+            top: -5px;
+            left: 0;
+            transform: rotate(-55deg);
+            border-left-color: var(--interactive-color);
+            border-bottom-color: var(--interactive-color);
+
+            @media (min-width: @min-md) {
+                width: 16px;
+                height: 12px;
+            }
+        }
+
+        @media (min-width: @min-md) {
+            font-size: 18px;
+        }
+
+        @media (min-width: @min-xl) {
+            font-size: 20px;
+        }
+    }
+}

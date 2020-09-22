@@ -1,0 +1,101 @@
+.section3 {
+    position: relative;
+    background-color: #F0F9FA;
+    padding: 30px 10px;
+
+    & h2 {
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 1.3;
+        text-align: center;
+        margin: 0;
+
+        @media (min-width: @min-md) {
+            font-size: 22px;
+        }
+
+        @media (min-width: @min-xl) {
+            font-size: 33px;
+            text-align: left;
+        }
+    }
+
+    & .title {
+        padding: 0;
+        margin: 1em 0 2em;
+        text-align: center;
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 1;
+        font-style: italic;
+
+        @media (min-width: @min-md) {
+            font-size: 22px;
+        }
+
+        @media (min-width: @min-xl) {
+            text-align: left;
+        }
+    }
+
+    & .bottom-text {
+        font-size: 14px;
+        line-height: 1.5;
+        text-align: center;
+
+        @media (min-width: @min-md) {
+            font-size: 18px;
+        }
+
+        @media (min-width: @min-xl) {
+            font-size: 20px;
+            text-align: left;
+        }
+    }
+
+    @media (min-width: @min-md) {
+        padding: 50px 70px;
+    }
+
+    @media (min-width: @min-xl) {
+        padding: 60px 90px;
+
+        & h2,
+        & .title,
+        & .bottom-text {
+            padding-left: 40px;
+        }
+    }
+
+    @media (min-width: @min-xl) {
+        padding: 60px 100px;
+    }
+
+    @media (min-width: @min-xxl) {
+        & h2,
+        & .title,
+        & .bottom-text,
+        & .interactive-color-list {
+            max-width: 710px;
+        }
+
+        & .container {
+
+        &::after {
+            content: '';
+            display: block;
+            width: 562px;
+            height: 604px;
+            background-image: url(../img/bg-section3.png);
+            background-repeat: no-repeat;
+            background-size: contain;
+            position: absolute;
+            top: 50px;
+            right: -20px;
+
+            @media (min-resolution: @retina-dpi), (min-resolution: @retina-dppx) {
+                background-image: url(../img/bg-section3@2x.png);
+            }
+        }}
+    }
+}
