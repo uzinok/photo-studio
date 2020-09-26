@@ -58,44 +58,54 @@
     }
 
     @media (min-width: @min-xl) {
-        padding: 60px 90px;
+        padding: 60px 20px;
 
         & h2,
         & .title,
         & .bottom-text {
             padding-left: 40px;
         }
-    }
 
-    @media (min-width: @min-xl) {
-        padding: 60px 100px;
-    }
-
-    @media (min-width: @min-xxl) {
         & h2,
         & .title,
         & .bottom-text,
         & .interactive-color-list {
-            max-width: 710px;
+            max-width: 650px;
         }
 
         & .container {
 
-        &::after {
-            content: '';
-            display: block;
-            width: 562px;
-            height: 604px;
-            background-image: url(../img/bg-section3.png);
-            background-repeat: no-repeat;
-            background-size: contain;
-            position: absolute;
-            top: 50px;
-            right: -20px;
+            &::after {
+                content: '';
+                display: block;
+                width: 357px;
+                height: 358px;
+                background-image: url(../img/bg-section3.png);
+                background-repeat: no-repeat;
+                background-size: contain;
+                position: absolute;
+                bottom: 0;
+                right: -20px;
 
-            @media (min-resolution: @retina-dpi), (min-resolution: @retina-dppx) {
-                background-image: url(../img/bg-section3@2x.png);
+                @media (min-resolution: @retina-dpi),
+                (min-resolution: @retina-dppx) {
+                    background-image: url(../img/bg-section3@2x.png);
+                }
             }
-        }}
+        }
+    }
+
+    @media (min-width: @min-xl) {
+        padding-left: 0;
+        padding-right: 0;
+        
+        & .container {
+
+            &::after {
+                width: 562px;
+                height: 563px;
+                bottom: -105px;
+            }
+        }
     }
 }
