@@ -70,7 +70,7 @@
         font-size: 16px;
         line-height: 1.1;
         text-decoration: none;
-        color: var(--text-color);
+        color: @text-color;
 
         @media (min-width: @min-md) {
             height: 85px;
@@ -173,13 +173,13 @@
         width: 30px;
         height: 30px;
         border: 2px solid transparent;
-        border-top-color: var(--text-color);
-        border-left-color: var(--text-color);
+        border-top-color: @text-color;
+        border-left-color: @text-color;
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-14%, -50%) rotate(-45deg);
-        transition: border var(--transition-delay);
+        transition: border @transition-delay;
 
         @media (min-width: @min-md) {
             width: 32px;
@@ -195,8 +195,8 @@
     &:hover {
 
         &::before {
-            border-top-color: var(--interactive-color);
-            border-left-color: var(--interactive-color);
+            border-top-color: @interactive-color;
+            border-left-color: @interactive-color;
         }
     }
 
@@ -259,7 +259,7 @@
         &.active {
 
             &::before {
-                background-color: var(--interactive-color);
+                background-color: @interactive-color;
                 width: 28px;
                 height: 28px;
                 transition: background @transitionDelay, width calc(@transitionDelay / 2), height calc(@transitionDelay / 0.5);

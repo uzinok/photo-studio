@@ -5,7 +5,7 @@
     text-align: center;
     padding-bottom: 30px;
 
-    &::after {
+    &::before {
         content: '';
         display: block;
         position: absolute;
@@ -16,8 +16,7 @@
         max-width: 2000px;
         height: 100%;
         clip-path: url(#svgPath-bg-section);
-        background-color: var(--interactive-color);
-        opacity: 59%;
+        background-color: rgba(@interactive-color, 0.59);
         z-index: -1;
 
         @media (min-width: @min-md) {
@@ -39,7 +38,7 @@
         }
     }
 
-    &::before {
+    &::after {
         content: '';
         display: block;
         position: absolute;
@@ -98,7 +97,7 @@
 .section1__button {
     margin-top: 20px;
 
-    background: var(--interactive-color);
+    background: @interactive-color;
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.54);
     border-radius: 3px;
     padding: 15px;
@@ -109,7 +108,7 @@
     line-height: 1;
     letter-spacing: -0.04em;
     text-transform: uppercase;
-    color: var(--text-color);
+    color: @text-color;
 
     @media (min-width: @min-md) {
         font-size: 17px;

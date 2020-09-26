@@ -52,16 +52,16 @@
       display: block;
       width: 20px;
       height: 3px;
-      background-color: var(--text-color);
+      background-color: @text-color;
       position: absolute;
-      transition: transform var(--transition-delay), box-shadow var(--transition-delay);
+      transition: transform @transition-delay, box-shadow @transition-delay;
       top: 50%;
       left: 50%;
     }
 
     &::before {
       transform: translate(-50%, -7px);
-      box-shadow: 0px 7px 0 var(--text-color);
+      box-shadow: 0px 7px 0 @text-color;
     }
 
     &::after {
@@ -73,7 +73,7 @@
 
       &.open::before,
       &.open::after {
-        background-color: var(--interactive-color);
+        background-color: @interactive-color;
         top: 50%;
         left: 50%;
       }
@@ -96,7 +96,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     width: 20px;
-    fill: var(--text-color);
+    fill: @text-color;
 
     @media (min-width: @min-md) {
       width: 25px;
@@ -138,10 +138,10 @@
 }
 
 .header__nav-link {
-  transition: color var(--transition-delay);
+  transition: color @transition-delay;
   
   &:hover {
-    color: var(--interactive-color);
+    color: @interactive-color;
   }
 }
 
@@ -160,7 +160,7 @@
     font-size: 14px;
     line-height: 1;
     letter-spacing: 0.06em;
-    color: var(--text-color);
+    color: @text-color;
     text-decoration: none;
   }
 
@@ -171,10 +171,10 @@
     color: #fff;
     text-decoration: none;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.48);
-    transition: color var(--transition-delay), text-shadow var(--transition-delay);
+    transition: color @transition-delay, text-shadow @transition-delay;
 
     &:hover {
-      color: var(--interactive-color);
+      color: @interactive-color;
     }
   }
 }
@@ -187,7 +187,7 @@
     left: 0;
     width: 100%;
     border-radius: 0 0 9px 9px;
-    background-color: var(--text-color);
+    background-color: @text-color;
     padding-top: 30px;
     padding-bottom: 50px;
     opacity: 0;
@@ -215,7 +215,7 @@
       padding-right: 16px;
       
     &:hover {
-      color: var(--interactive-color);
+      color: @interactive-color;
     }
     }
   }

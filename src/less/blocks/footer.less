@@ -12,7 +12,7 @@ footer {
   }
 
   @media (min-width: @max-md) {
-    background-color: var(--text-color);
+    background-color: @text-color;
     text-align: left;
 
     & .container {
@@ -30,7 +30,7 @@ footer {
   & iframe {
     display: block;
     height: 263px;
-    border: 2.84589px solid var(--interactive-color);
+    border: 2.84589px solid @interactive-color;
     border-radius: 5px;
     box-sizing: border-box;
 
@@ -49,7 +49,7 @@ footer {
 
   & .content {
     padding: 20px 15px;
-    background-color: var(--text-color);
+    background-color: @text-color;
 
     @media (min-width: @max-md) {
       width: 50%;
@@ -135,7 +135,7 @@ footer {
   & h3 {
     font-size: 14px;
     line-height: 16px;
-    color: var(--interactive-color);
+    color: @interactive-color;
     font-weight: 300;
     margin: 0;
     margin: 0;
@@ -164,7 +164,7 @@ footer {
   & a {
     text-decoration: none;
     color: #fff;
-    border-bottom: 1px solid #01FDE1;
+    border-bottom: 1px solid @contrast-color;
   }
 
   & p,
@@ -178,7 +178,7 @@ footer {
 .button__footer {
   margin-top: 15px;
   padding: 7px 9px;
-  border: 1px solid var(--interactive-color);
+  border: 1px solid @interactive-color;
   border-radius: 5px;
   display: inline-block;
   font-size: 14px;
