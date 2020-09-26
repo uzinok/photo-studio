@@ -8,12 +8,14 @@
     
 
     @media (min-width: @min-md) {
-        flex-direction: row;
-        justify-content: space-between;
+        // flex-direction: row;
+        // justify-content: space-between;
+        display: block;
+        text-align: center;
     }
 
     @media (min-width: @min-xl) {
-        justify-content: space-between;
+        // justify-content: space-between;
     }
 
     @media (min-width: @min-xxl) {
@@ -30,10 +32,11 @@
 
     @media (min-width: @min-md) {
         max-width: 289px;
+        display: inline-flex;
 
         &:nth-child(1) {
             margin-top: 100px;
-            margin-right: -129px;
+            margin-right: -30px;
         }
 
         &:nth-child(2) {
@@ -41,7 +44,7 @@
         }
 
         &:nth-child(3) {
-            margin-left: -129px;
+            margin-left: -30px;
             margin-top: 100px;
         }
     }
