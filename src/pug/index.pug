@@ -1,3 +1,5 @@
+//- mixin
+//- slide
 mixin my_slide-1(url_img, text, count)
   li.slider__item(data-count=count)
     picture
@@ -9,11 +11,20 @@ mixin my_slide-1(url_img, text, count)
       source(media='(min-width: 1450px)' srcset='./img/slider1-624/' + url_img + '-624.jpg 1x, ./img/slider1-624/' + url_img + '-624@2x.jpg 2x')
       source(media='(min-width: 1024px)' srcset='./img/slider1-585/' + url_img + '-585.jpg 1x, ./img/slider1-585/' + url_img + '-585@2x.jpg 2x')
       source(media='(min-width: 768px)' srcset='./img/slider1-450/' + url_img + '-450.jpg 1x, ./img/slider1-450/' + url_img + '-450@2x.jpg 2x')
-      img(src='./img/slider1-268/' + url_img + '-268.jpg' srcset='./img/slider1-268/' + url_img + '-268.jpg 1x, ./img/slider1-268/' + url_img + '-268@2x.jpg 2x')
+      img(src='./img/slider1-268/' + url_img + '-268.jpg' srcset='./img/slider1-268/' + url_img + '-268.jpg 1x, ./img/slider1-268/' + url_img + '-268@2x.jpg 2x', alt=text)
 
     a(href="#" tabindex="-1")
       | #{text}
 
+//- section4 card
+mixin section4-card(url_img, title, text)
+  li.section4__item
+    img.section4_img(src='./img/' + url_img, width='80', height='80', aria-hidden='true')
+    p.section4__title #{title}
+    p.section4__text #{text}
+
+
+//- page
 <!DOCTYPE html>
 html(lang="ru")
   head
@@ -111,4 +122,67 @@ html(lang="ru")
 
           p.bottom-text Если по какой-то причине вам не понравится фото, мы не возьмем с&#160;вас&#160;оплату и будем ждать вас снова!
 
+      section.section4
+        .container
+          ul.section4__list
+            +section4-card('section4-card-1.svg', 'Удобство', 'Услугу можно заказать, не выходя из дома. Вам останется лишь забрать готовый заказ в удобное для Вас время')
+            +section4-card('section4-card-2.svg', 'Гарантия', 'В случае, если качество заказа вас не устроит, мы вернем Вам деньги')
+            +section4-card('section4-card-3.svg', 'Качество', 'У нас профессиональное оборудование, расходные материалы. Наши дизайнеры с опытом работы более 12 лет')
+    
+    footer
+      .container
+        iframe(src='https://yandex.ru/map-widget/v1/?um=constructor%3Ae7b44e18a1f8a498fe397f1e0e099c8319c6082fe0fa2f7d0ed5fc327486bbcc&source=constructor', width='100%', height='420', frameborder='0')
+        .content
+          address
+            h2 Контакты
+            section
+
+              article
+                h3 Адрес
+                p
+                  | г.Волгоград 
+                  br
+                  |  ул.Рабоче-Крестьянская 14
+
+              article
+                h3 Телефон
+                p
+                  a(href='tel:+79876576889')  +7 (987) 657-68-89
+
+              article
+                h3 E-mail
+                p
+                  a(href='mailto:alla198207@mail.ru') alla198207@mail.ru
+
+              article
+                h3 Время работы
+                table
+                  caption.visually-hidden время работы
+                  tbody
+                    tr
+                      td пн-чт
+                      td 10:00-18:00
+                    tr
+                      td пт
+                      td 10:00-17:00
+                    tr
+                      td сб
+                      td 10:00-16:00
+                    tr
+                      td вс
+                      td выходной
+
+              article
+                h3 Сайт
+                a(href='#') ZOOM.РФ
+                a.button.button__footer(href="#")  Обратная связь
+            p И.П. Охрименко А.К. ИНН 346001480690; ОГРИЛ 5464646545445
+          p
+            | Волгоград 2006-
+            script.
+              date = new Date();
+              document.write(date.getFullYear());
+            | ; Все права защищены
+
+    
     script(src="js/main-debug.js")
