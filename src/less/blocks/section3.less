@@ -42,6 +42,7 @@
         font-size: 14px;
         line-height: 1.5;
         text-align: center;
+        text-transform: uppercase;
 
         @media (min-width: @min-md) {
             font-size: 18px;
@@ -70,7 +71,7 @@
         & .title,
         & .bottom-text,
         & .interactive-color-list {
-            max-width: 650px;
+            max-width: 630px;
         }
 
         & .container {
@@ -80,22 +81,22 @@
                 display: block;
                 width: 357px;
                 height: 358px;
-                background-image: url(../img/bg-section3.png);
+                background-image: url(../img/bg-section3-357.png);
                 background-repeat: no-repeat;
                 background-size: contain;
                 position: absolute;
                 bottom: 0;
-                right: -20px;
+                right: 0;
 
                 @media (min-resolution: @retina-dpi),
                 (min-resolution: @retina-dppx) {
-                    background-image: url(../img/bg-section3@2x.png);
+                    background-image: url(../img/bg-section3-357@2x.png);
                 }
             }
         }
     }
 
-    @media (min-width: @min-xl) {
+    @media (min-width: @min-xxl) {
         padding-left: 0;
         padding-right: 0;
         
@@ -105,6 +106,12 @@
                 width: 562px;
                 height: 563px;
                 bottom: -105px;
+                background-image: url(../img/bg-section3-562.png);
+
+                @media (min-resolution: @retina-dpi),
+                (min-resolution: @retina-dppx) {
+                    background-image: url(../img/bg-section3-562@2x.png);
+                }
             }
         }
     }
