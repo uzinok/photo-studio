@@ -2,16 +2,16 @@
 //- slide
 mixin my_slide-1(url_img, text, count)
   li.slider__item(data-count=count)
-    picture
-      source(type="image/webp", media='(min-width: 1045px)', srcset='./img/slider1-624/' + url_img + '-624.webp 1x, ./img/slider1-624/' + url_img + '-624@2x.webp 2x')
-      source(type="image/webp", media='(min-width: 1024px)', srcset='./img/slider1-585/' + url_img + '-585.webp 1x, ./img/slider1-585/' + url_img + '-585@2x.webp 2x')
-      source(type="image/webp", media='(min-width: 768px)', srcset='./img/slider1-450/' + url_img + '-450.webp 1x, ./img/slider1-450/' + url_img + '-450@2x.webp 2x')
-      source(type="image/webp", srcset='./img/slider1-268/' + url_img + '-268.webp 1x, ./img/slider1-268/' + url_img + '-268@2x.webp 2x')
+    picture.lazy
+      source(type="image/webp", media='(min-width: 1045px)', data-srcset='./img/slider1-624/' + url_img + '-624.webp 1x, ./img/slider1-624/' + url_img + '-624@2x.webp 2x')
+      source(type="image/webp", media='(min-width: 1024px)', data-srcset='./img/slider1-585/' + url_img + '-585.webp 1x, ./img/slider1-585/' + url_img + '-585@2x.webp 2x')
+      source(type="image/webp", media='(min-width: 768px)', data-srcset='./img/slider1-450/' + url_img + '-450.webp 1x, ./img/slider1-450/' + url_img + '-450@2x.webp 2x')
+      source(type="image/webp", data-srcset='./img/slider1-268/' + url_img + '-268.webp 1x, ./img/slider1-268/' + url_img + '-268@2x.webp 2x')
 
-      source(media='(min-width: 1450px)' srcset='./img/slider1-624/' + url_img + '-624.jpg 1x, ./img/slider1-624/' + url_img + '-624@2x.jpg 2x')
-      source(media='(min-width: 1024px)' srcset='./img/slider1-585/' + url_img + '-585.jpg 1x, ./img/slider1-585/' + url_img + '-585@2x.jpg 2x')
-      source(media='(min-width: 768px)' srcset='./img/slider1-450/' + url_img + '-450.jpg 1x, ./img/slider1-450/' + url_img + '-450@2x.jpg 2x')
-      img(src='./img/slider1-268/' + url_img + '-268.jpg' srcset='./img/slider1-268/' + url_img + '-268.jpg 1x, ./img/slider1-268/' + url_img + '-268@2x.jpg 2x', alt=text)
+      source(media='(min-width: 1450px)' data-srcset='./img/slider1-624/' + url_img + '-624.jpg 1x, ./img/slider1-624/' + url_img + '-624@2x.jpg 2x')
+      source(media='(min-width: 1024px)' data-srcset='./img/slider1-585/' + url_img + '-585.jpg 1x, ./img/slider1-585/' + url_img + '-585@2x.jpg 2x')
+      source(media='(min-width: 768px)' data-srcset='./img/slider1-450/' + url_img + '-450.jpg 1x, ./img/slider1-450/' + url_img + '-450@2x.jpg 2x')
+      img(data-src='./img/slider1-268/' + url_img + '-268.jpg' data-srcset='./img/slider1-268/' + url_img + '-268.jpg 1x, ./img/slider1-268/' + url_img + '-268@2x.jpg 2x', alt=text, src="img/slider-prev.jpg")
 
     a(href="#" tabindex="-1")
       | #{text}
@@ -46,9 +46,9 @@ html(lang="ru")
     header.header
       .container.header__container
         a(href="#", aria-label="главная")
-          picture
-            source(type="image/webp" srcset="img/logo.webp")
-            img(src="./img/logo.png" alt="логотип").header__logo
+          picture.lazy
+            source(type="image/webp" data-srcset="img/logo.webp")
+            img(data-src="./img/logo.png", data-srcset="./img/logo.png" alt="логотип").header__logo
 
         .header__nav
           nav.hidden-max-lg
@@ -109,7 +109,7 @@ html(lang="ru")
       section.section3
         .container
 
-          h2.heading-2  Фотография на любой вид&#160;документов
+          h2  Фотография на любой вид&#160;документов
           
           p.title  Почему выбирают нас?
 

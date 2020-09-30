@@ -89,7 +89,7 @@ window.onload = function () {
             wSlide = arrWidthSlide[0];
         } else if (window.innerWidth < arrBreakpointWidth[1]) {
             wSlide = arrWidthSlide[1];
-        } else  if (window.innerWidth < arrBreakpointWidth[2]){
+        } else if (window.innerWidth < arrBreakpointWidth[2]) {
             wSlide = arrWidthSlide[2];
         } else {
             wSlide = arrWidthSlide[3];
@@ -157,7 +157,7 @@ window.onload = function () {
 
         function draw(sliderList) {
 
-            setTransform (countActive, wSlide, sliderList);
+            setTransform(countActive, wSlide, sliderList);
 
             if (slider.querySelector('[style="transform: translate(-10px, 0px);"]')) {
                 slider.querySelector('[style="transform: translate(-10px, 0px);"]').style.transform = '';
@@ -174,19 +174,42 @@ window.onload = function () {
         return countActive;
     }
 
-    function setTransform (countActive, wSlide, sliderList) {
+    function setTransform(countActive, wSlide, sliderList) {
         var transform = 0;
-        if(wSlide == 268) {
-            transform =  countActive*wSlide;
-        } else if(wSlide == 268) {
-            transform =  countActive*wSlide + wSlide/2 - (window.innerWidth/2 - wSlide) - wSlide;
-        } else if(wSlide == 624) {
-            transform =  countActive*wSlide + wSlide/2 - (1450/2 - wSlide) - wSlide;
+        if (wSlide == 268) {
+            transform = countActive * wSlide;
+        } else if (wSlide == 268) {
+            transform = countActive * wSlide + wSlide / 2 - (window.innerWidth / 2 - wSlide) - wSlide;
+        } else if (wSlide == 624) {
+            transform = countActive * wSlide + wSlide / 2 - (1450 / 2 - wSlide) - wSlide;
         } else {
-            transform =  countActive*wSlide + wSlide/2 - (window.innerWidth/2 - wSlide) - wSlide;
+            transform = countActive * wSlide + wSlide / 2 - (window.innerWidth / 2 - wSlide) - wSlide;
         }
 
         sliderList.style.transform = 'translate(-' + transform + 'px, 0)';
-
     }
+
+    // lazy load
+    var intersectionObserver = new IntersectionObserver(function (entries) {
+        // Если intersectionRatio равен 0, цель вне зоны видимости
+        // и нам не нужно ничего делать
+        if (entries[0].intersectionRatio <= 0) return;
+
+
+        // loadItems(10);
+        console.log(entries[0].target.querySelector('img'));
+
+        if (entries[0].target.querySelector('img').getAttribute('srcset')) return;
+
+        entries[0].target.querySelector('img').setAttribute('src', entries[0].target.querySelector('img').getAttribute('data-src'));
+        entries[0].target.querySelector('img').setAttribute('srcset', entries[0].target.querySelector('img').getAttribute('data-srcset'));
+        console.log(entries[0].target);
+        entries[0].target.querySelectorAll('source').forEach(function (element) {
+            element.setAttribute('srcset', element.getAttribute('data-srcset'));
+        });
+    });
+    // начать наблюдение
+    document.querySelectorAll('.lazy').forEach(function (element) {
+        intersectionObserver.observe(element);
+    });
 };
