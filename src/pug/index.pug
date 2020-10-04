@@ -2,7 +2,7 @@
 //- slide
 mixin my_slide-1(url_img, text, count)
   li.slider__item(data-count=count)
-    picture.lazy
+    picture
       source(type="image/webp", media='(min-width: 1045px)', data-srcset='./img/slider1-624/' + url_img + '-624.webp 1x, ./img/slider1-624/' + url_img + '-624@2x.webp 2x')
       source(type="image/webp", media='(min-width: 1024px)', data-srcset='./img/slider1-585/' + url_img + '-585.webp 1x, ./img/slider1-585/' + url_img + '-585@2x.webp 2x')
       source(type="image/webp", media='(min-width: 768px)', data-srcset='./img/slider1-450/' + url_img + '-450.webp 1x, ./img/slider1-450/' + url_img + '-450@2x.webp 2x')
@@ -46,9 +46,9 @@ html(lang="ru")
     header.header
       .container.header__container
         a(href="#", aria-label="главная")
-          picture.lazy
+          picture
             source(type="image/webp" data-srcset="img/logo.webp")
-            img(data-src="./img/logo.png", data-srcset="./img/logo.png" alt="логотип").header__logo
+            img(src="./img/logo.png", srcset="./img/logo.png" alt="логотип").header__logo
 
         .header__nav
           nav.hidden-max-lg
@@ -73,6 +73,16 @@ html(lang="ru")
     main
 
       section.section1
+        
+        picture
+          source(type="image/webp", media='(min-width: 1024px)', srcset='img/section1/bg-section1-girl@1024.webp 1x, img/section1/bg-section1-girl@1024@2x.webp 2x')
+          source(type="image/webp", media='(min-width: 768px)', srcset='img/section1/bg-section1-girl@768.webp 1x, img/section1/bg-section1-girl@768@2x.webp 2x')
+          source(type="image/webp", srcset='img/section1/bg-section1-girl.webp 1x, img/section1/bg-section1-girl@2x.webp 2x')
+
+          source(media='(min-width: 1024px)' srcset='img/section1/bg-section1-girl@1024.png 1x, img/section1/bg-section1-girl@1024@2x.png 2x')
+          source(media='(min-width: 768px)' srcset='img/section1/bg-section1-girl@768.png 1x, img/section1/bg-section1-girl@768@2x.png 2x')
+
+          img.section1__before(src='img/section1/bg-section1-girl.png' srcset='img/section1/bg-section1-girl.png 1x, img/section1/bg-section1-girl@2x.png 2x', aria-true='hidden')
 
         .container
 
@@ -123,6 +133,16 @@ html(lang="ru")
 
           p.bottom-text Если по какой-то причине вам не понравится фото, мы не возьмем с&#160;вас&#160;оплату и будем ждать вас снова!
 
+                  
+          picture
+            source(type="image/webp" media='(min-width: 1450px)' srcset='img/section3/bg-section3@562.webp 1x, img/section3/bg-section3@562@2x.webp 2x')
+            source(type="image/webp" media='(min-width: 1024px)' srcset='img/section3/bg-section3@357.webp 1x, img/section3/bg-section3@357@2x.webp 2x')
+
+            source(media='(min-width: 1450px)' srcset='img/section3/bg-section3@562.png 1x, img/section3/bg-section3@562@2x.png 2x')
+            source(media='(min-width: 1024px)' srcset='img/section3/bg-section3@357.png 1x, img/section3/bg-section3@357@2x.png 2x')
+
+            img.section3__after(aria-true='hidden')
+
       section.section4
         .container
           ul.section4__list
@@ -132,7 +152,7 @@ html(lang="ru")
     
     footer
       .container
-        iframe(src='https://yandex.ru/map-widget/v1/?um=constructor%3Ae7b44e18a1f8a498fe397f1e0e099c8319c6082fe0fa2f7d0ed5fc327486bbcc&source=constructor', width='100%', height='420', frameborder='0')
+        iframe.map(data-src='https://yandex.ru/map-widget/v1/?um=constructor%3Ae7b44e18a1f8a498fe397f1e0e099c8319c6082fe0fa2f7d0ed5fc327486bbcc&source=constructor', width='100%', height='420', frameborder='0')
         .content
           address
             h2 Контакты

@@ -6,6 +6,43 @@ window.onload = function () {
         noJS[i].classList.remove('no-JS');
     }
 
+
+    function observePicrure(picture) {
+        picture.querySelector('img').setAttribute('src', picture.querySelector('img').getAttribute('data-src'));
+        picture.querySelector('img').setAttribute('srcset', picture.querySelector('img').getAttribute('data-srcset'));
+        picture.querySelectorAll('source').forEach(function (element) {
+            element.setAttribute('srcset', element.getAttribute('data-srcset'));
+        });
+    }
+
+    // lazy load
+    var intersectionObserver = new IntersectionObserver(function (entries) {
+        if (entries[0].intersectionRatio <= 0) return;
+
+        // console.log(entries[0].target.querySelector('img'));
+        if (entries[0].target.querySelector('img').getAttribute('srcset')) return;
+
+        observePicrure(entries[0].target);
+    });
+    // document.querySelectorAll('.lazy').forEach(function (element) {
+    //     intersectionObserver.observe(element);
+    // });
+
+
+    function observeMap(elem) {
+        elem.setAttribute('src', elem.getAttribute('data-src'));
+    }
+    // lazy load map
+    var intersectionObserver1 = new IntersectionObserver(function (entries) {
+        if (entries[0].intersectionRatio <= 0) return;
+
+        if (entries[0].target.getAttribute('src')) return;
+
+        observeMap(entries[0].target);
+    });
+    intersectionObserver1.observe(document.querySelector('.map'));
+
+
     // nav
     var headerButtonJs = document.querySelector('.header__button--js');
     var nav = document.querySelector('.header__nav nav');
@@ -81,6 +118,18 @@ window.onload = function () {
 
         countActive = drawSlider(countActive, pagerButton, sliderItem, slider, wSlide, sliderList);
 
+        sliderListWrap.querySelectorAll('picture').forEach(function (element) {
+            intersectionObserver.observe(element);
+        });
+
+        if (window.innerWidth >= arrBreakpointWidth[0]) {
+            observePicrure(sliderListWrap.querySelectorAll('picture')[0]);
+            observePicrure(sliderListWrap.querySelectorAll('picture')[1]);
+            observePicrure(sliderListWrap.querySelectorAll('picture')[2]);
+        } else {
+            observePicrure(sliderListWrap.querySelectorAll('picture')[1]);
+        }
+
     }
 
     function initSlider(sliderList, arrWidthSlide, arrBreakpointWidth, count, sliderListWrap, wSlide) {
@@ -134,7 +183,6 @@ window.onload = function () {
         // liLast1.classList.add('slider__item');
         // liLast1.setAttribute('data-count', sliderItem.length + 2);
         // sliderList.appendChild(liLast1);
-
     }
 
     function drawSlider(countActive, pagerButton, sliderItem, slider, wSlide, sliderList) {
@@ -188,28 +236,4 @@ window.onload = function () {
 
         sliderList.style.transform = 'translate(-' + transform + 'px, 0)';
     }
-
-    // lazy load
-    var intersectionObserver = new IntersectionObserver(function (entries) {
-        // Если intersectionRatio равен 0, цель вне зоны видимости
-        // и нам не нужно ничего делать
-        if (entries[0].intersectionRatio <= 0) return;
-
-
-        // loadItems(10);
-        console.log(entries[0].target.querySelector('img'));
-
-        if (entries[0].target.querySelector('img').getAttribute('srcset')) return;
-
-        entries[0].target.querySelector('img').setAttribute('src', entries[0].target.querySelector('img').getAttribute('data-src'));
-        entries[0].target.querySelector('img').setAttribute('srcset', entries[0].target.querySelector('img').getAttribute('data-srcset'));
-        console.log(entries[0].target);
-        entries[0].target.querySelectorAll('source').forEach(function (element) {
-            element.setAttribute('srcset', element.getAttribute('data-srcset'));
-        });
-    });
-    // начать наблюдение
-    document.querySelectorAll('.lazy').forEach(function (element) {
-        intersectionObserver.observe(element);
-    });
 };

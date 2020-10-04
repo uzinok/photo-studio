@@ -1,6 +1,5 @@
 .section1 {
     position: relative;
-    background-image: url(../img/bg-section1.svg);
     background-size: cover;
     text-align: center;
     padding-bottom: 30px;
@@ -38,38 +37,24 @@
         }
     }
 
-    &::before {
-        content: '';
+    .section1__before {
         display: block;
         position: absolute;
         top: 0;
         left: 50%;
         transform: translateX(-50%);
-        width: 100%;
+        width: auto;
         height: 182px;
-        background-image: url(../img/bg-section1-girl.png);
         background-repeat: no-repeat;
         background-position: center top;
         background-size: contain;
 
-        @media (min-resolution: @retina-dpi), (min-resolution: @retina-dppx) {
-            background-image: url(../img/bg-section1-girl@2x.png);
-        }
-
         @media (min-width: @min-md) {
-            background-image: url(../img/bg-section1-girl@768.png);
             height: 436px;
-            @media (min-resolution: @retina-dpi), (min-resolution: @retina-dppx) {
-                background-image: url(../img/bg-section1-girl@768@2x.png);
-            }
         }
 
         @media (min-width: @min-xl) {
-            background-image: url(../img/bg-section1-girl@1024.png);
             height: 614px;
-            @media (min-resolution: @retina-dpi), (min-resolution: @retina-dppx) {
-                background-image: url(../img/bg-section1-girl@1024@2x.png);
-            }
         }
 
         @media (min-width: @min-xxl) {

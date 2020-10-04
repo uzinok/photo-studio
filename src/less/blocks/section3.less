@@ -76,22 +76,11 @@
 
         & .container {
 
-            &::after {
-                content: '';
-                display: block;
+            & .section3__after {
                 width: 357px;
-                height: 358px;
-                background-image: url(../img/bg-section3-357.png);
-                background-repeat: no-repeat;
-                background-size: contain;
                 position: absolute;
                 bottom: 0;
                 right: 0;
-
-                @media (min-resolution: @retina-dpi),
-                (min-resolution: @retina-dppx) {
-                    background-image: url(../img/bg-section3-357@2x.png);
-                }
             }
         }
     }
@@ -102,16 +91,9 @@
         
         & .container {
 
-            &::after {
+            & .section3__after {
                 width: 562px;
-                height: 563px;
                 bottom: -105px;
-                background-image: url(../img/bg-section3-562.png);
-
-                @media (min-resolution: @retina-dpi),
-                (min-resolution: @retina-dppx) {
-                    background-image: url(../img/bg-section3-562@2x.png);
-                }
             }
         }
     }
